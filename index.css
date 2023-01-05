@@ -1,0 +1,146 @@
+@font-face {
+    font-family: Pilot;
+    src: url("Pilot.otf");
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing:content-box;
+}
+.game-frame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.cell {
+    display: flex;
+    align-items: center;
+}
+.inner-cell {
+    padding: 10px;
+    border: 1px solid #D0D0D0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    font-family: Pilot;
+    font-size: 100px;
+}
+
+.inner-cell:nth-child(1),
+.inner-cell:nth-child(2),
+.inner-cell:nth-child(3)
+{
+    border-top: none;
+}
+.inner-cell:nth-child(1),
+.inner-cell:nth-child(3) {
+    border-left: none;
+    border-right: none;
+}
+#cell-3 .inner-cell:nth-child(1),
+#cell-3 .inner-cell:nth-child(2),
+#cell-3 .inner-cell:nth-child(3) {
+    border-bottom: none;
+}
+.inner-cell:hover {
+    border-color: #A1A1A1;
+}
+h1 {
+    text-align: center;
+    font-family: Pilot;
+    font-size: 30px;
+    padding: 20px;
+}
+.winner {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    font-family: Pilot;
+    user-select: none;
+    font-size: 50px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    z-index: 1;
+}
+.winner .play-again{
+    font-family: Pilot;
+    font-size: 30px;
+    background-color: #F1F1F1;
+    color: #1e1e1e;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.winner .play-again:hover{
+    opacity: 90%;
+}
+.menu {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .4);
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    font-family: Pilot;
+    user-select: none;
+    font-size: 20px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    z-index: 1;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+.menu h1 {
+    color: #1A1A1A;
+}
+.mode, .mode_select {
+    font-size: 20px;
+    color: #1e1e1e;
+    padding: 10px;
+}
+.mode {
+    font-size: 30px;
+}
+.mode_select:hover {
+    background-color: #1A1A1A;
+    opacity: 90%;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+@media (max-width: 800px) {
+    .menu {
+        width: 350px;
+    }
+    .winner { 
+        width: 350px;
+    }
+}
